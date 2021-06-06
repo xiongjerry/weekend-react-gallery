@@ -6,9 +6,6 @@ function GalleryItem({item, getGalleryList}) {
 
     const [isHidden, setIsHidden] = useState(false);
 
-const togglePic = () => {
-
-}
 
 // Use Put route
 const handleLike = () => {
@@ -22,12 +19,21 @@ const handleLike = () => {
 
     return (
         <>
-            <div className="pic">
-                <img onClick={togglePic} src={item.path}/>
-
+            <div className="list"onClick={() => setIsHidden(!isHidden)}>
+                { isHidden ? (
+                <div className="pic">
+                    <p>{item.description}</p>
+                </div>
+            ) : (
+                <div>
+                    <img src={item.path}/>
+                </div>
+            )}
+            </div>
+            <div>
                 <button onClick={handleLike}>I Like This!</button>
                 <p>Number of people who likes this: {item.likes}</p>
-            </div >
+            </div>
         </>
     )
 }
