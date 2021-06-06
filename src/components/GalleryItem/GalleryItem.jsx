@@ -1,18 +1,24 @@
 import './GalleryItem.css'
 import { useState } from 'react';
-
+import axios from 'axios'
 
 function GalleryItem({item, getGalleryList}) {
+
+    const [isHidden, setIsHidden] = useState(false);
 
 const togglePic = () => {
 
 }
 
+// Use Put route
 const handleLike = () => {
-
+    axios.put(`/gallery/like/${item.id}`).then(response => {
+        console.log(response);
+        getGalleryList();
+    }).catch(err => {
+        console.log(err)
+    })
 }
-
-
 
     return (
         <>
