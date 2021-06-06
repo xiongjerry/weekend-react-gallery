@@ -1,0 +1,15 @@
+
+
+.pic {
+    margin: 1em;
+    display: inline-block;
+    border: 1px solid black;
+    height: 206px;
+    width: 206px;
+    flex: auto
+}
+
+img {
+    border: 3px solid black;
+    height: 200px; width: 200px;
+}

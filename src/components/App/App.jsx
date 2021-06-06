@@ -1,7 +1,8 @@
 import {useState, useEffect} from 'react';
 import GalleryList from '../GalleryList/GalleryList';
-import './App.css';
 
+import './App.css';
+import axios from 'axios'
 
 function App() {
 
@@ -22,14 +23,18 @@ const getGalleryList = ()=> {
 
 
     return (
+      <>
       <div className="App">
         <header className="App-header">
-          <h1 className="App-title">Gallery of My Life</h1>
+          <h1 className="App-title">My Florida Trip</h1>
         </header>
-        <p>Gallery goes here</p>
-        <img src="images/goat_small.jpg"/>
+        <p>Some Pictures Over There</p>
         <GalleryList list={galleryList} getGalleryList={getGalleryList}/>
       </div>
+      <footer>
+        <h2>In Orlando Florida</h2>
+      </footer>
+      </>
     );
 }
 
